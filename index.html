@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#260b1b">
+  <meta name="description" content="A beautiful celebration of love. Join us for the wedding festivities.">
+  <title>A Celebration of Love — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--wine:#4a102e;--wine2:#260b1b;--rose:#a94d72;--gold:#d7b66e;--cream:#fff8ef;--ink:#321c28;--muted:#806d72}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    button,a{font:inherit}a{color:inherit}.serif{font-family:"Cormorant Garamond",serif}
+    .loader{position:fixed;inset:0;z-index:20;background:var(--wine2);display:grid;place-items:center;color:var(--gold);transition:opacity .7s,visibility .7s}
+    .loader.hide{opacity:0;visibility:hidden}.loader-inner{text-align:center;letter-spacing:.25em;font-size:11px}.loader-mark{font-size:42px;margin-bottom:12px;animation:pulse 1.4s infinite}
+    @keyframes pulse{50%{transform:scale(1.12);opacity:.65}}
+    .cover-screen{min-height:100svh;background:radial-gradient(ellipse at 50% 35%,#7c3150 0,#3a102b 48%,#190713 100%);display:grid;place-items:center;padding:28px 18px;position:relative;overflow:hidden;color:var(--cream)}
+    .cover-screen:before,.cover-screen:after{content:"✿";position:absolute;color:#d7b66e22;font-size:clamp(180px,35vw,420px);pointer-events:none}.cover-screen:before{left:-90px;top:-100px}.cover-screen:after{right:-100px;bottom:-160px}
+    .book-wrap{perspective:1400px;position:relative;z-index:1;width:min(88vw,390px);height:min(136vw,590px);max-height:76svh;cursor:pointer}
+    .book{height:100%;width:100%;position:relative;transform-style:preserve-3d;transition:transform 1.35s cubic-bezier(.2,.7,.2,1)}
+    .book.open{transform:rotateY(-155deg)}
+    .book-front,.book-inside{position:absolute;inset:0;border:1px solid #e3c77e;border-radius:5px 15px 15px 5px;backface-visibility:hidden;box-shadow:18px 24px 55px #0008;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px}
+    .book-front{background:linear-gradient(135deg,#6b1d40,#310d25 68%,#551638);outline:1px solid #d7b66e55;outline-offset:-10px}
+    .book-front:before{content:"";position:absolute;inset:18px;border:1px solid #d7b66e88;border-radius:3px}
+    .book-inside{background:#fff6e9;color:var(--wine);transform:rotateY(180deg);border-radius:14px 5px 5px 14px}
+    .ganesh{font-size:54px;color:var(--gold);margin:10px 0}.ornament{color:var(--gold);letter-spacing:.35em;font-size:11px}
+    .book-title{font-size:clamp(38px,10vw,58px);line-height:.9;margin:18px 0;color:#f6dfb1;font-weight:500}
+    .book-sub{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#e7cfa0}
+    .tap{position:absolute;bottom:28px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#f2dba9;animation:bob 1.5s infinite}
+    @keyframes bob{50%{transform:translateY(-6px)}}
+    .topline{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+    .hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;background:#2a1020;color:white;padding:70px 22px}
+    .hero-photo{position:absolute;inset:0;background:linear-gradient(#1b071a66,#1b071a99),url("photos/couple-garden.jpg") center 35%/cover;transform:scale(1.04);animation:slowzoom 18s ease-in-out infinite alternate}
+    @keyframes slowzoom{to{transform:scale(1.15)}}
+    .hero-content{position:relative;z-index:1;max-width:760px}.hero .topline{color:#f1d89e}.hero h1{font-size:clamp(58px,13vw,112px);font-weight:400;line-height:.82;margin:30px 0 22px;text-shadow:0 5px 35px #0006}
+    .amp{font-style:italic;color:#e7c77f}.hero p{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#f8e9d6}
+    .hero-rule{width:110px;height:1px;background:var(--gold);margin:28px auto}.scroll-cue{margin-top:60px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#f5dfb5}
+    .section{padding:100px 20px;position:relative}.section-inner{width:min(100%,1000px);margin:auto}.center{text-align:center}.eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#a47a49}.section h2{font:500 clamp(42px,8vw,70px)/.95 "Cormorant Garamond",serif;color:var(--wine);margin:16px 0 20px}.intro{max-width:600px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.9}
+    .date-section{background:#f3e6d8}.reveal-card{margin:48px auto 24px;max-width:560px;min-height:260px;border:1px solid #c7a66a;background:linear-gradient(145deg,#fffaf2,#f5e6d6);box-shadow:0 18px 50px #4a102e12;display:grid;place-items:center;padding:35px;position:relative;overflow:hidden}
+    .reveal-card:before{content:"";position:absolute;inset:10px;border:1px solid #c9ab73}
+    .reveal-card .date-hidden{font:500 27px "Cormorant Garamond",serif;color:var(--wine);transition:.5s;filter:blur(5px);opacity:.2}
+    .reveal-card.revealed .date-hidden{filter:none;opacity:1}
+    .reveal-button,.gold-button{border:1px solid var(--gold);background:var(--wine);color:#fff6e7;padding:14px 24px;letter-spacing:.13em;text-transform:uppercase;font-size:10px;cursor:pointer;transition:.25s}
+    .reveal-button:hover,.gold-button:hover{background:#6b2044;transform:translateY(-2px)}
+    .countdown{display:flex;justify-content:center;gap:clamp(12px,5vw,40px);margin:35px 0 10px}.count-item strong{display:block;font:500 36px "Cormorant Garamond",serif;color:var(--wine)}.count-item span{font-size:9px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+    .events{background:#fff9f1}.event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}.event{background:#f7eee5;border:1px solid #e8d7c3;padding:28px 22px;text-align:center;min-height:220px;transition:.3s}.event:hover{transform:translateY(-7px);box-shadow:0 18px 35px #4a102e12}.event-icon{font-size:30px}.event h3{font:600 30px "Cormorant Garamond",serif;color:var(--wine);margin:15px 0 7px}.event p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}
+    .story{background:#2a1020;color:#fff8ef}.story h2{color:#fff0d9}.story .eyebrow{color:var(--gold)}.story .intro{color:#e1cbd1}
+    .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:95px;gap:12px;margin-top:45px}.photo{position:relative;overflow:hidden;background:#4c2437}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}.photo:hover img{transform:scale(1.06)}.photo:nth-child(1){grid-column:span 5;grid-row:span 4}.photo:nth-child(2){grid-column:span 7;grid-row:span 3}.photo:nth-child(3){grid-column:span 4;grid-row:span 3}.photo:nth-child(4){grid-column:span 4;grid-row:span 3}.photo:nth-child(5){grid-column:span 4;grid-row:span 3}.photo:nth-child(6){grid-column:span 7;grid-row:span 3}
+    .reception{background:linear-gradient(135deg,#54132f,#240817);color:#fff4e5;text-align:center}.reception h2{color:#f7dfb2}.reception .eyebrow{color:var(--gold)}.reception .intro{color:#e8cfd7}
+    .venue{background:#f3e6d8}.venue-card{max-width:680px;margin:40px auto 0;padding:38px;border:1px solid #c6a56c;background:#fff9f1;text-align:center}.venue-card h3{font:500 36px "Cormorant Garamond",serif;color:var(--wine);margin:0 0 10px}.venue-card p{color:var(--muted);font-size:13px;line-height:1.8}
+    footer{padding:75px 20px;background:#1c0713;color:#f6e5cb;text-align:center}footer .ganesh{font-size:40px}footer h2{font:500 48px "Cormorant Garamond",serif;margin:12px 0}footer p{font-size:11px;letter-spacing:.15em;color:#d7bda5}
+    .fade-up{opacity:0;transform:translateY(25px);transition:opacity .8s,transform .8s}.fade-up.visible{opacity:1;transform:none}
+    @media(max-width:700px){.section{padding:78px 18px}.event-grid{grid-template-columns:1fr 1fr}.gallery{grid-auto-rows:65px;gap:7px}.photo:nth-child(1){grid-column:span 7;grid-row:span 4}.photo:nth-child(2){grid-column:span 5;grid-row:span 3}.photo:nth-child(3){grid-column:span 5;grid-row:span 3}.photo:nth-child(4){grid-column:span 7;grid-row:span 3}.photo:nth-child(5){grid-column:span 6;grid-row:span 3}.photo:nth-child(6){grid-column:span 6;grid-row:span 3}.venue-card{padding:28px 18px}}
+    @media(max-width:390px){.event-grid{grid-template-columns:1fr}.book-wrap{height:125vw}.count-item strong{font-size:30px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader"><div class="loader-inner"><div class="loader-mark">❧</div>PREPARING YOUR INVITATION</div></div>
+  <section class="cover-screen" id="cover">
+    <div class="book-wrap" id="bookWrap" role="button" tabindex="0" aria-label="Open wedding invitation">
+      <div class="book" id="book">
+        <div class="book-front">
+          <div class="ornament">✧ ❧ ✧</div><div class="ganesh">ॐ</div>
+          <div class="book-sub">With the blessings of our families</div>
+          <h1 class="book-title serif">Wedding<br>Invitation</h1>
+          <div class="ornament">A CELEBRATION OF LOVE</div>
+        </div>
+        <div class="book-inside">
+          <div class="ornament">✧ शुभ विवाह ✧</div><div class="ganesh">ॐ</div>
+          <p class="serif" style="font-size:25px;margin:8px 0">You are cordially invited</p>
+          <p style="font-size:12px;line-height:1.8;color:#806d72">to celebrate a beautiful beginning<br>and bless the couple with your presence.</p>
+          <div class="ornament" style="margin-top:24px">29 NOVEMBER 2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="tap">Tap the invitation to open <span>↓</span></div>
+  </section>
+
+  <main id="invitation" hidden>
+    <header class="hero">
+      <div class="hero-photo"></div>
+      <div class="hero-content">
+        <div class="topline">Together with our families</div>
+        <h1 class="serif"><span class="name-groom">Groom's Name</span><br><span class="amp">&</span><br><span class="name-bride">Bride's Name</span></h1>
+        <div class="hero-rule"></div>
+        <p>Request the pleasure of your company</p>
+        <p class="serif" style="font-size:25px;letter-spacing:.05em;text-transform:none">29 November 2025 · Saturday</p>
+        <div class="scroll-cue">Scroll to discover our celebration ↓</div>
+      </div>
+    </header>
+
+    <section class="section center date-section">
+      <div class="section-inner fade-up">
+        <div class="eyebrow">A day to remember</div><h2>Save the Date</h2>
+        <p class="intro">Some moments become memories forever. We would be honoured to have you with us as we begin this new chapter.</p>
+        <div class="reveal-card" id="revealCard">
+          <div><div class="eyebrow">Our wedding day</div><div class="date-hidden">29 · 11 · 2025<br><small style="font-size:18px">Saturday</small></div><button class="reveal-button" id="revealBtn">✧ Reveal the date ✧</button></div>
+        </div>
+        <div class="countdown" id="countdown">
+          <div class="count-item"><strong id="days">—</strong><span>Days</span></div><div class="count-item"><strong id="hours">—</strong><span>Hours</span></div><div class="count-item"><strong id="minutes">—</strong><span>Minutes</span></div><div class="count-item"><strong id="seconds">—</strong><span>Seconds</span></div>
+        </div>
+        <p id="countdownNote" class="intro" style="font-size:11px">Counting down to our special day</p>
+        <button class="gold-button" id="calendarBtn">Add to calendar</button>
+      </div>
+    </section>
+
+    <section class="section events center">
+      <div class="section-inner fade-up">
+        <div class="eyebrow">The celebrations</div><h2>Wedding Festivities</h2>
+        <p class="intro">A gathering of love, laughter, traditions and unforgettable moments. Function details can be personalised with your final schedule.</p>
+        <div class="event-grid">
+          <article class="event"><div class="event-icon">🌼</div><h3>Haldi</h3><p>Time & venue to be announced<br>Dress code · Yellow</p></article>
+          <article class="event"><div class="event-icon">🌿</div><h3>Mehendi</h3><p>Time & venue to be announced<br>Dress code · Green</p></article>
+          <article class="event"><div class="event-icon">🎶</div><h3>Sangeet</h3><p>Time & venue to be announced<br>Dress code · Festive</p></article>
+          <article class="event"><div class="event-icon">💍</div><h3>Wedding</h3><p>Saturday · 29 November 2025<br>Time to be confirmed</p></article>
+          <article class="event"><div class="event-icon">🔥</div><h3>Pheras</h3><p>With blessings and sacred vows<br>Venue details to be announced</p></article>
+          <article class="event"><div class="event-icon">🥂</div><h3>Reception</h3><p>Celebration details to be announced<br>We hope you can join us</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story center">
+      <div class="section-inner fade-up">
+        <div class="eyebrow">A little glimpse of us</div><h2>Our Story</h2>
+        <p class="intro">Every picture holds a moment; together, they tell a story that is only ours.</p>
+        <div class="gallery">
+          <div class="photo"><img src="photos/bride-portrait.jpg" alt="Bride in a magenta gown" loading="lazy"></div>
+          <div class="photo"><img src="photos/couple-dance.jpg" alt="The couple sharing a dance" loading="lazy"></div>
+          <div class="photo"><img src="photos/groom-portrait.jpg" alt="Groom in a dark suit" loading="lazy"></div>
+          <div class="photo"><img src="photos/couple-closeup.jpg" alt="A close moment together" loading="lazy"></div>
+          <div class="photo"><img src="photos/bride-dress.jpg" alt="Bride in her flowing dress" loading="lazy"></div>
+          <div class="photo"><img src="photos/couple-garden.jpg" alt="The couple in the garden" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reception center">
+      <div class="section-inner fade-up">
+        <div class="eyebrow">An evening of joy</div><h2>And the celebration continues…</h2>
+        <p class="intro">Your presence, blessings and warm wishes will make our celebration complete. We cannot wait to celebrate with you.</p>
+        <div class="hero-rule"></div><p class="serif" style="font-size:29px;color:#f3dba9">With love, the families</p>
+      </div>
+    </section>
+
+    <section class="section venue center">
+      <div class="section-inner fade-up">
+        <div class="eyebrow">Find your way to us</div><h2>Wedding Location</h2>
+        <p class="intro">We look forward to welcoming you. The exact venue and map link can be added once confirmed.</p>
+        <div class="venue-card"><div class="ganesh" style="font-size:36px">⌖</div><h3>Wedding Venue</h3><p>Venue name and full address<br>To be updated</p><button class="gold-button" onclick="alert('Please add the Google Maps link in the website details before sharing.')">Get directions</button></div>
+      </div>
+    </section>
+
+    <footer><div class="ganesh">ॐ</div><div class="eyebrow" style="color:#d7b66e">With heartfelt blessings</div><h2>We can't wait to celebrate with you</h2><p>29 NOVEMBER 2025 · SATURDAY</p><p style="margin-top:28px">MADE WITH LOVE</p></footer>
+  </main>
+  <script>
+    const loader=document.getElementById('loader');
+    window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),500));
+    const book=document.getElementById('book'),wrap=document.getElementById('bookWrap'),cover=document.getElementById('cover'),main=document.getElementById('invitation');
+    function openInvite(){book.classList.add('open');setTimeout(()=>{cover.style.display='none';main.hidden=false;window.scrollTo(0,0);observeSections()},850)}
+    wrap.addEventListener('click',openInvite);wrap.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openInvite()}});
+    document.getElementById('revealBtn').addEventListener('click',()=>{document.getElementById('revealCard').classList.add('revealed');document.getElementById('revealBtn').textContent='✧ The day is revealed ✧'});
+    const target=new Date('2025-11-29T18:00:00');
+    function tick(){let diff=target-new Date();if(diff<=0){['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='0');document.getElementById('countdownNote').textContent='A beautiful day to remember';return}
+      const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
+      document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s}
+    tick();setInterval(tick,1000);
+    document.getElementById('calendarBtn').addEventListener('click',()=>{const start='20251129T123000Z',end='20251129T180000Z';const url=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Celebration&dates=${start}%2F${end}&details=Join+us+to+celebrate+our+wedding`;window.open(url,'_blank','noopener')});
+    let observer;function observeSections(){observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el))}
+  </script>
+</body>
+</html>
